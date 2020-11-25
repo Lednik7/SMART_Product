@@ -104,5 +104,10 @@ def smart_trainer_check():
             check_goal = 'Цель сформулирована верно! Закрепим успех?'
         return render_template('smart_trainer_check.html', check_goal=check_goal)
 
+@app.route('/useful_links')
+def useful_links():
+
+    return render_template('useful_links.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
