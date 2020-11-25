@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<div >
+    <h3>Пожалуйста, ответьте на вопросы анкеты:</h3>
+        <form  method="POST">
+        {{ form.hidden_tag() }}
+        <br/>
+        {{ form.goal_name.label }}
+		<br/>
+		{{form.goal_name}}
+        <br/>
+
+        {{ form.goal_result.label }} 
+		<br/>
+		{{form.goal_result}}
+        <br/>
+
+        {{ form.goal_type.label }}
+		<br/>
+		{{form.goal_type}}
+        <br/>
+
+        {{ form.goal_first_step.label }}
+		<br/>
+		{{form.goal_first_step}}
+        <br/>
+
+        {{ form.goal_domain.label }} 
+		<br/>
+		{{form.goal_domain}}
+        <br/>
+
+        {{ form.goal_obstacle.label }}
+		<br/>
+		{{form.goal_obstacle}}
+        <br/>
+
+        {{ form.goal_time.label }} 
+		<br/>
+		{{form.goal_time}}
+        <br/>
+
+        
+		<div class="btn">
+		{{ form.submit() }} 
+		</div>
+        
+        </form>
+        <br/>
+        <br/>
+</div>
+
+{% endblock %}

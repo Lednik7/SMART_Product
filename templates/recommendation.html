@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class='container'>
+		<h3>Рекомендательная система</h3>
+		<br/>
+		<h3>Рекомендации книг</h3>
+		{% for b in book %}
+			<li>{{ b.title}}</li>
+		{% endfor %}
+		<br/>
+
+	</div>
+
+	<form action="/">
+		<div class="btn">
+			<input type="submit" value="Назад" />
+		</div>
+	</form>
+
+
+{% endblock %}

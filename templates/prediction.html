@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class='container'>
+		<h3>Соответствие критериям SMART</h3>
+		{% for sm in smart %}
+			<li>{{ sm }}</li>
+		{% endfor %}
+		<br/>
+		<h3>Относится ли цель к образованию/карьере</h3>
+		{% for ce in edu_car %}
+			<li>{{ ce }}</li>
+		{% endfor %}
+		<br/>
+		<h3>Показатель абстрактности цели</h3>
+		{{ abstract }}
+		<br/>
+		<br/>
+		<h3>Тематика цели</h3>
+		{% for topic in topics %}
+			<li>{{ topic }}</li>
+		{% endfor %}
+		<br/>
+		<h3>Совет для пользователя</h3>
+		{% for question in questions %}
+			<li>{{ question }}</li>
+		{% endfor %}
+		<br/>
+	</div>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+	<form action="/">
+		<div class="btn">
+			<input type="submit" value="Назад" />
+		</div>
+	</form>
+
+	<form action="/recommendation">
+		<div class="btn">
+			<input type="submit" value="Рекомендации" />
+		</div>
+	</form>
+</div>
+
+
+{% endblock %}
