@@ -12,9 +12,11 @@ from model_questions.MQ import load_questions_model
 from recommendation_system import get_recommendations
 from smart_trainer.check_goal_name import *
 
+import pickle
+
 #  load data
-with open("data/full_books_without_year.txt", "rb") as f:
-    books = eval(f.read())
+with open("data/full_books_without_year.pkl", "rb") as f:
+    books = pickle.load(f)
 
 Model_Questions = load_questions_model("model_questions/")
 
