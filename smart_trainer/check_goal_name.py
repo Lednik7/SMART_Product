@@ -26,8 +26,8 @@ def get_tokens(x):
     return out
 
 class name_checker():
-    def __init__(self, stopwords, list_of_pos):
-        self.stop_words = stopwords
+    def __init__(self, stop_words, list_of_pos):
+        self.stop_words = stop_words
         self.list_of_pos = list_of_pos
 
     def is_correct_input_name(self, x):
