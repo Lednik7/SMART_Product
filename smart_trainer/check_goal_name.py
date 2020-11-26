@@ -27,7 +27,7 @@ def get_tokens(x):
 
 class name_checker():
     def __init__(self, stopwords, list_of_pos):
-        self.stopwords = stopwords
+        self.stop_words = stopwords
         self.list_of_pos = list_of_pos
 
     def is_correct_input_name(self, x):
@@ -44,7 +44,7 @@ class name_checker():
             if (str(poses) in self.list_of_pos) and (n >= 3):
                 return 1
             dates = comp.search(x)
-            if dates and (n >= 3):
+            if (dates.span() != (0, 0)) and (n >= 3):
                 return 1
             return 0
         except: return 0
