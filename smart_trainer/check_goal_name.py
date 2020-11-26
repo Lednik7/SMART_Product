@@ -1,10 +1,7 @@
 import os
 import pickle
 from string import punctuation
-import re
 import pymorphy2
-
-comp = re.compile(r"\b\d*\b")
 
 morph = pymorphy2.MorphAnalyzer(lang="ru")
 
@@ -43,9 +40,10 @@ class name_checker():
             poses = get_tokens(x)
             if (str(poses) in self.list_of_pos) and (n >= 3):
                 return 1
-            dates = comp.search(x)
-            if (dates.span() != (0, 0)) and (n >= 3):
-                return 1
+            if n >= 3:
+                for element in x_clear.split():
+                    if element.isdigit():
+                        return 1
             return 0
         except: return 0
 
